@@ -48,7 +48,7 @@ def validate_html(html):
     if len(lc) == 0:
         return False
     for i, symbol in enumerate(lc):
-        if re.match('<([^/][\s\S]*?)>', symbol):
+        if re.match(r'<([^/][\s\S]*?)>', symbol):
             stack.append(symbol[1:-1].split()[0])
         else:
             if len(stack) == 0:
